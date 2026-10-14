@@ -1,0 +1,2851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MV - AKAPI MEN 2026 - Catálogo de Caballero & Tienda Online</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #c77b49;
+      --primary-dark: #a85d2e;
+      --primary-light: #fef3ec;
+      --navy-deep: #0f172a;
+      --navy-dark: #1e293b;
+      --navy-card: #182234;
+      --bg-slate: #f1f5f9;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --success: #10b981;
+      --wholesale-color: #0284c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-slate);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: linear-gradient(90deg, #090d16, #162438);
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(199, 123, 73, 0.3);
+    }
+    .top-bar .highlight {
+      color: #fdbb74;
+      font-weight: 600;
+    }
+
+    /* Main Navigation Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    }
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo {
+      background: var(--navy-deep);
+      border: 1px solid var(--primary);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 2.5px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+    }
+    .brand-info h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .brand-info p {
+      font-size: 0.72rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-tabs {
+      display: flex;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+    }
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      color: var(--navy-deep);
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-cart {
+      background: var(--navy-deep);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+    .btn-cart:hover {
+      background: var(--navy-dark);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .cart-badge {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    /* Main Container */
+    .main-content {
+      max-width: 1320px;
+      margin: 24px auto;
+      padding: 0 20px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 38px 34px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(199, 123, 73, 0.25);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+    }
+    .hero-banner::after {
+      content: "AKAPI MEN";
+      position: absolute;
+      right: -25px;
+      bottom: -15px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+      letter-spacing: 5px;
+    }
+    .hero-text h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .hero-text p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+    .hero-badge {
+      background: rgba(199, 123, 73, 0.2);
+      border: 1px solid var(--primary);
+      color: #fdbb74;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 20px;
+      text-align: center;
+    }
+    .stat-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .stat-box .number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fdbb74;
+      display: block;
+      font-family: 'Oswald', sans-serif;
+    }
+    .stat-box .label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* Store Toolbar */
+    .store-toolbar {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(199, 123, 73, 0.15);
+    }
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill-btn:hover {
+      background: #e2e8f0;
+      color: var(--navy-deep);
+    }
+    .pill-btn.active {
+      background: var(--navy-deep);
+      color: #ffffff;
+      border-color: var(--navy-deep);
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+      gap: 22px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      border-color: var(--primary);
+    }
+
+    /* Card Media & Mosaico Inteligente */
+    .card-media {
+      height: 340px;
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* 1 Sola Foto */
+    .mosaic-1 {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      padding: 6px;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .mosaic-1 {
+      transform: scale(1.02);
+    }
+
+    /* 2 Fotos largas: una al lado de la otra */
+    .mosaic-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+      gap: 5px;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+    .mosaic-2 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .mosaic-2 img {
+      transform: scale(1.02);
+    }
+
+    /* 3 Fotos: 1 alta a la izquierda + 2 apiladas una sobre otra a la derecha */
+    .mosaic-3 {
+      display: grid;
+      grid-template-areas:
+        "alta arriba"
+        "alta abajo";
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+      gap: 5px;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+    .mosaic-3 .img-alta {
+      grid-area: alta;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      transition: transform 0.3s ease;
+    }
+    .mosaic-3 .img-arriba {
+      grid-area: arriba;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      transition: transform 0.3s ease;
+    }
+    .mosaic-3 .img-abajo {
+      grid-area: abajo;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .mosaic-3 img {
+      transform: scale(1.02);
+    }
+
+    .card-illustration {
+      font-size: 4.5rem;
+      color: #94a3b8;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+    }
+    .card-badge-top {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 3;
+    }
+    .tag-code {
+      background: rgba(15, 23, 42, 0.92);
+      color: #fff;
+      border: 1px solid var(--primary);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .card-colors {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+      gap: 4px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 4px 8px;
+      border-radius: 20px;
+      z-index: 3;
+    }
+    .color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+    .card-body {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-category {
+      font-size: 0.72rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+      line-height: 1.35;
+      min-height: 2.8rem;
+    }
+    .card-sizes {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-pricing {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 14px;
+    }
+    .price-unit-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .price-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .price-unit-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+    }
+    .price-wholesale-col {
+      text-align: right;
+    }
+    .price-wholesale-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--wholesale-color);
+      background: #e0f2fe;
+      padding: 2px 7px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .card-btn {
+      width: 100%;
+      background: var(--navy-deep);
+      color: #fff;
+      border: none;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .card-btn:hover {
+      background: var(--primary);
+    }
+
+    /* Admin Price Editor Panel */
+    .admin-panel {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .admin-header h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: var(--navy-deep);
+    }
+    .admin-header p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    /* Batch Adjust Tools */
+    .batch-tools {
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .batch-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .batch-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .batch-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .batch-input {
+      width: 80px;
+      padding: 7px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .btn-action {
+      background: var(--navy-deep);
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      background: var(--primary);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      color: var(--navy-deep);
+    }
+
+    /* Switch toggle */
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1; transition: .3s; border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+      background-color: white; transition: .3s; border-radius: 50%;
+    }
+    input:checked + .slider { background-color: var(--primary); }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    /* Admin Table */
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.86rem;
+    }
+    .admin-table th {
+      background: #f8fafc;
+      padding: 12px 14px;
+      font-weight: 700;
+      color: var(--navy-deep);
+      border-bottom: 2px solid var(--border-color);
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      letter-spacing: 0.5px;
+    }
+    .admin-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    .admin-table tr:hover {
+      background: #f8fafc;
+    }
+    .admin-thumb {
+      width: 50px;
+      height: 60px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+    }
+    .admin-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .price-input-cell {
+      width: 110px;
+      padding: 6px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+    .price-input-cell:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(199, 123, 73, 0.2);
+    }
+    .profit-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--success);
+      background: #ecfdf5;
+      padding: 3px 8px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    /* PDF Generator Preview */
+    .pdf-preview-panel {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 28px;
+    }
+    .pdf-controls {
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-download-pdf {
+      background: var(--navy-deep);
+      color: #fff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-download-pdf:hover {
+      background: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    /* Printable Catalog Sheet Format */
+    .printable-sheet {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .print-header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .print-header h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      color: var(--navy-deep);
+    }
+    .print-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .print-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .print-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+      page-break-inside: avoid;
+    }
+    .print-item-thumb {
+      height: 180px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .print-item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .print-item-code {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .print-item-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin: 2px 0 4px 0;
+      line-height: 1.25;
+    }
+    .print-item-sizes {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .print-item-prices {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    /* Cart Drawer / Modal */
+    .drawer-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -420px; width: 400px; max-width: 90vw; height: 100vh;
+      background: #ffffff;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cart-drawer.open {
+      right: 0;
+    }
+    .drawer-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .drawer-header h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      color: var(--navy-deep);
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .drawer-body {
+      padding: 20px;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .cart-item {
+      display: flex;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+      align-items: center;
+    }
+    .cart-item-thumb {
+      width: 65px;
+      height: 65px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 1.4rem;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cart-item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.2;
+    }
+    .cart-item-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .cart-qty-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .qty-btn {
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border-color);
+      background: #f1f5f9;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .drawer-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+      background: #f8fafc;
+    }
+    .cart-summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+    .cart-total-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-color);
+    }
+    .btn-whatsapp-order {
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      transition: all 0.2s;
+    }
+    .btn-whatsapp-order:hover {
+      background: #20ba59;
+    }
+
+    /* Print Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .printable-sheet, .printable-sheet * {
+        visibility: visible;
+      }
+      .printable-sheet {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+      .top-bar, header, .hero-banner, .store-toolbar, .pdf-controls, .nav-tabs {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .print-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-banner {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-tabs {
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div>
+      <i class="fa-solid fa-crown" style="color: var(--primary);"></i> <strong>CATÁLOGO CABALLERO AKAPI 2026</strong> | Camisas, Pantalones, Bermudas, Chaquetas y Gorras
+    </div>
+    <div>
+      <span class="highlight" style="display: none !important;"><i class="fa-brands fa-whatsapp"></i> Ventas por Mayor y Menor</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand" onclick="cambiarVista('tienda')">
+        <div class="brand-logo">MV</div>
+        <div class="brand-info">
+          <h1>AKAPI - Colección Caballero 2026</h1>
+          <p>Línea Masculina &bull; Moda &amp; Calidad</p>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" style="display:none;">
+        <button class="tab-btn active" id="tab-tienda" onclick="cambiarVista('tienda')">
+          <i class="fa-solid fa-store"></i> Tienda Online
+        </button>
+        <button class="tab-btn" id="tab-admin" onclick="cambiarVista('admin')">
+          <i class="fa-solid fa-tags"></i> Modificar Precios
+        </button>
+        <button class="tab-btn" id="tab-pdf" onclick="cambiarVista('pdf')">
+          <i class="fa-solid fa-file-pdf"></i> Exportar PDF
+        </button>
+      </nav>
+
+      <!-- Cart Button -->
+      <div class="nav-actions">
+        <button class="btn-cart" onclick="toggleCarrito(true)">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Pedido</span>
+          <span class="cart-badge" id="cart-counter">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- ==================== VIEW 1: TIENDA ONLINE ==================== -->
+    <section id="view-tienda">
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <div class="hero-text">
+          <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Colección Oficial 2026</span>
+          <h2>Línea Masculina AKAPI</h2>
+          <p>Camisas de seda y galleta, pantalones semitubo y cargo jogger, bermudas de pana, chaquetas denim corte italiano, camisetas oversize y gorras exclusivas.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="number" id="stat-total-models">70+</span>
+            <span class="label">Prendas</span>
+          </div>
+          <div class="stat-box">
+            <span class="number">S a XXL</span>
+            <span class="label">Tallas Plus &amp; Reg.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Store Filters and Toolbar -->
+      <div class="store-toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="store-search" placeholder="Buscar por código (ej. CC35, PH068, BH014) o nombre..." oninput="filtrarProductosTienda()">
+        </div>
+
+        <div class="category-pills">
+          <button class="pill-btn active" onclick="filtrarCategoria('Todos', this)">Todos</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Camisas', this)">Camisas</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Camisetas', this)">Camisetas</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Pantalones', this)">Pantalones</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Bermudas', this)">Bermudas</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Chaquetas y Abrigos', this)">Chaquetas y Abrigos</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Gorras y Accesorios', this)">Gorras y Accesorios</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Conjuntos', this)">Conjuntos</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="grid-productos">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: ADMINISTRADOR DE PRECIOS ==================== -->
+    <section id="view-admin" style="display: none;">
+      <div class="admin-panel">
+        <div class="admin-header">
+          <div>
+            <h2><i class="fa-solid fa-sliders"></i> Panel de Precios y Márgenes (Caballero)</h2>
+            <p>Modifica los precios unitarios y de mayoreo de cada artículo en tiempo real. Los cambios se guardan automáticamente en tu navegador.</p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <button class="btn-outline" onclick="restablecerPreciosOriginales()">
+              <i class="fa-solid fa-rotate-left"></i> Restablecer Originales
+            </button>
+            <button class="btn-action" onclick="cambiarVista('tienda')">
+              <i class="fa-solid fa-check"></i> Ver en Tienda
+            </button>
+          </div>
+        </div>
+
+        <!-- Global Batch Adjust Tools -->
+        <div class="batch-tools">
+          <div class="batch-title">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary);"></i> Ajuste Masivo:
+          </div>
+
+          <div class="batch-group">
+            <label>Aplicar % a Unitario:</label>
+            <input type="number" id="batch-unit-pct" class="batch-input" placeholder="+10" value="10">
+            <button class="btn-action" onclick="aplicarAjustePorcentual('unit')">Aplicar %</button>
+          </div>
+
+          <div class="batch-group">
+            <label>Aplicar % a Mayor:</label>
+            <input type="number" id="batch-wholesale-pct" class="batch-input" placeholder="+10" value="10">
+            <button class="btn-action" onclick="aplicarAjustePorcentual('wholesale')">Aplicar %</button>
+          </div>
+
+          <div style="border-left: 1px solid var(--border-color); height: 28px; margin: 0 4px;"></div>
+
+          <div class="toggle-group">
+            <label class="switch">
+              <input type="checkbox" id="toggle-show-wholesale" checked onchange="toggleVisibilidadPrecios()">
+              <span class="slider"></span>
+            </label>
+            <span>Mostrar Precio Mayor en Tienda</span>
+          </div>
+
+          <div class="toggle-group" style="margin-left: 10px;">
+            <label>Moneda:</label>
+            <select id="select-moneda" class="batch-input" style="width: auto;" onchange="cambiarMoneda(this.value)">
+              <option value="$">USD ($)</option>
+              <option value="Q">GTQ (Q)</option>
+              <option value="€">EUR (€)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Search in Table -->
+        <div style="margin-bottom: 14px; max-width: 320px;">
+          <input type="text" id="admin-search" placeholder="Filtrar por código o nombre en tabla..." oninput="filtrarTablaAdmin()" class="batch-input" style="width: 100%; text-align: left; padding: 8px 12px;">
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Código</th>
+                <th>Nombre del Modelo</th>
+                <th>Categoría</th>
+                <th>Tallas</th>
+                <th>Precio Unitario</th>
+                <th>Precio Mayor</th>
+                <th>Margen Ganancia</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-admin-productos">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: GENERADOR Y EXPORTADOR PDF ==================== -->
+    <section id="view-pdf" style="display: none;">
+      <div class="pdf-preview-panel">
+        <!-- PDF Control Bar -->
+        <div class="pdf-controls">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--navy-deep); margin-bottom: 4px;">
+              <i class="fa-solid fa-file-pdf" style="color: var(--primary);"></i> Exportación de Catálogo Listo para Compartir
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+              Genera un documento PDF limpio y estilizado con los precios y fotografías de tus prendas de caballero.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <div class="toggle-group">
+              <label class="switch">
+                <input type="checkbox" id="pdf-toggle-wholesale" checked onchange="actualizarVistaPDF()">
+                <span class="slider"></span>
+              </label>
+              <span>Incluir Precios de Mayoreo</span>
+            </div>
+
+            <button class="btn-download-pdf" onclick="imprimirODescargarPDF()">
+              <i class="fa-solid fa-print"></i> Imprimir o Guardar como PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Printable Document Area -->
+        <div class="printable-sheet" id="printable-area">
+          <div class="print-header">
+            <div>
+              <h1>AKAPI MEN - CATÁLOGO DE CABALLERO 2026</h1>
+              <p>Colección Masculina &bull; Camisas, Pantalones, Bermudas, Chaquetas y Gorras</p>
+            </div>
+            <div style="text-align: right;">
+              <p style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">PEDIDOS Y VENTAS</p>
+              <p id="print-contact-info">WhatsApp Oficial: +502 0000-0000</p>
+            </div>
+          </div>
+
+          <div class="print-grid" id="pdf-grid-items">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== SHOPPING CART DRAWER ==================== -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="toggleCarrito(false)"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3><i class="fa-solid fa-bag-shopping" style="color: var(--primary);"></i> Tu Pedido</h3>
+      <button class="close-btn" onclick="toggleCarrito(false)"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="drawer-body" id="cart-items-container">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="drawer-footer">
+      <div style="margin-bottom: 12px; display: none !important;">
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--navy-deep); display: block; margin-bottom: 4px;">Tipo de Tarifa del Pedido:</label>
+        <select id="cart-price-tier" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); font-size: 0.85rem;" onchange="renderizarCarrito()">
+          <option value="unit">Precio Unitario (Venta al Detalle)</option>
+          <option value="wholesale">Precio Mayorista (Venta por Mayor)</option>
+        </select>
+      </div>
+
+      <div class="cart-summary-line">
+        <span>Artículos seleccionados:</span>
+        <span id="cart-items-count">0 prendas</span>
+      </div>
+      <div class="cart-total-line">
+        <span>Total Estimado:</span>
+        <span id="cart-total-amount">$0.00</span>
+      </div>
+
+      <button class="btn-whatsapp-order" onclick="enviarPedidoWhatsApp()">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== APPLICATION SCRIPT ==================== -->
+  <script>
+    // Initial catalog dataset from user's catalogue con mapeo dinámico de mosaicos
+    const CATALOGO_BASE = [
+  {
+    "code": "CC35",
+    "name": "Camisa de Caballero Tela Seda",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL (Plus XXL)",
+    "unit": 899.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#163969",
+      "#000000",
+      "#ffffff"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC34",
+    "name": "Camisa de Caballero Tela Galleta",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL (Plus XXL)",
+    "unit": 899.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "BH014",
+    "name": "Bermuda de Caballero AKAPI Confort",
+    "category": "Bermudas",
+    "sizes": "S, M, L",
+    "unit": 849.0,
+    "wholesale": 33.0,
+    "colors": [
+      "#e8ceb0"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH09",
+    "name": "Chaqueta Jean de Caballero Corte Italiano",
+    "category": "Chaquetas y Abrigos",
+    "sizes": "XS, S, M, L",
+    "unit": 949.0,
+    "wholesale": 39.0,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH013",
+    "name": "Bermuda de Caballero AKAPI Denim",
+    "category": "Bermudas",
+    "sizes": "L (Plus XXL)",
+    "unit": 849.0,
+    "wholesale": 33.0,
+    "colors": [
+      "#00357a"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC30",
+    "name": "Camisa de Caballero Elegance",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL",
+    "unit": 899.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#000000",
+      "#1800ad",
+      "#7e1c22"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH23",
+    "name": "Abrigo Akapi Caballero",
+    "category": "Chaquetas y Abrigos",
+    "sizes": "S, M, L, XL, XXL",
+    "unit": 949.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#000000",
+      "#ebd6b8"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC31",
+    "name": "Camiseta de Caballero Classic",
+    "category": "Camisetas",
+    "sizes": "S, M, L, XL",
+    "unit": 875.0,
+    "wholesale": 32.0,
+    "colors": [
+      "#ffffff",
+      "#bb8f72",
+      "#163969"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH068",
+    "name": "Pantalón Cargo Jogger Akapi Caballero",
+    "category": "Pantalones",
+    "sizes": "28 a 36 (Plus 38)",
+    "unit": 899.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#0d0d0d",
+      "#e8ceb0"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH24",
+    "name": "Conjunto para Caballero Akapi Sport",
+    "category": "Conjuntos",
+    "sizes": "S, M, L, XL, XXL",
+    "unit": 999.0,
+    "wholesale": 41.0,
+    "colors": [
+      "#0d0d0d",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH002",
+    "name": "Pantalón Semitubo Denim",
+    "category": "Pantalones",
+    "sizes": "30, 36 (Plus 40, 42)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH26",
+    "name": "Abrigo Akapi Caballero Premium",
+    "category": "Chaquetas y Abrigos",
+    "sizes": "S, M, L, XL (Plus XXL)",
+    "unit": 949.0,
+    "wholesale": 37.0,
+    "colors": [
+      "#000000",
+      "#c78d49",
+      "#a19da3",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC07",
+    "name": "Camiseta Akapi Caballero Oversize",
+    "category": "Camisetas",
+    "sizes": "S, M, XXL",
+    "unit": 700.0,
+    "wholesale": 29.0,
+    "colors": [
+      "#e8ceb0",
+      "#0d0d0d"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH007",
+    "name": "Pantalón Caballero Casual",
+    "category": "Pantalones",
+    "sizes": "30, 32, 36",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#f8f7f2",
+      "#e8ceb0",
+      "#0d0d0d"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH047",
+    "name": "Pantalón Semitubo Urbano",
+    "category": "Pantalones",
+    "sizes": "28, 30, 34 (Plus 38)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#8d8f84"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH003",
+    "name": "Pantalón Semitubo Roto",
+    "category": "Pantalones",
+    "sizes": "28, 30, 32, 34",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#163969",
+      "#487eb6"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH001",
+    "name": "Pantalón de Caballero Semitubo",
+    "category": "Pantalones",
+    "sizes": "34 (Plus 38)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH067",
+    "name": "Pantalón Cargo Recto de Caballero",
+    "category": "Pantalones",
+    "sizes": "28 a 36 (Plus 38)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#0d0d0d",
+      "#e8ceb0"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH053",
+    "name": "Pantalón de Caballero Roto Stretch",
+    "category": "Pantalones",
+    "sizes": "38 Plus",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH004",
+    "name": "Pantalón de Caballero Semitubo Black",
+    "category": "Pantalones",
+    "sizes": "28, 30, 34 (Plus 38 a 42)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH050",
+    "name": "Pantalón Tubo de Caballero Akapi",
+    "category": "Pantalones",
+    "sizes": "28 a 32",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH063",
+    "name": "Pantalón Semitubo de Caballero Medium Blue",
+    "category": "Pantalones",
+    "sizes": "30, 34, 36 (Plus 38)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH008",
+    "name": "Pantalón Recto de Caballero",
+    "category": "Pantalones",
+    "sizes": "28 a 38 (Plus 40)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH072",
+    "name": "Jogger Caballero Tela Suave",
+    "category": "Pantalones",
+    "sizes": "28 a 36 (Plus 38)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#e8ceb0",
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC10",
+    "name": "Camisa Akapi de Caballero Estilizada",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL (Plus XXL)",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#163969",
+      "#000000",
+      "#ffffff"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC12",
+    "name": "Camisa Bicolor Akapi de Caballero",
+    "category": "Camisas",
+    "sizes": "S, M, L",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#8d8f84",
+      "#1c2120",
+      "#ffffff",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC22",
+    "name": "Camisa Premium para Caballero",
+    "category": "Camisas",
+    "sizes": "S, M, L",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#bb8f72",
+      "#000000",
+      "#91bb80"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC23",
+    "name": "Camisa Premium Caballero Minimal",
+    "category": "Camisas",
+    "sizes": "M, L",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC05",
+    "name": "Camiseta de Caballero Oversize Akapi",
+    "category": "Camisetas",
+    "sizes": "M, L, XL",
+    "unit": 750.0,
+    "wholesale": 29.0,
+    "colors": [
+      "#428263",
+      "#ebd6b8"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC24",
+    "name": "Camisa de Caballero Botones Contrastantes",
+    "category": "Camisas",
+    "sizes": "S, M, L (Plus XXL)",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "BH004",
+    "name": "Bermuda Pana Akapi Caballero",
+    "category": "Bermudas",
+    "sizes": "30, 34, 36 (Plus 38)",
+    "unit": 679.0,
+    "wholesale": 32.0,
+    "colors": [
+      "#c77b49",
+      "#428263"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH008",
+    "name": "Bermuda Corta Caballero Fit",
+    "category": "Bermudas",
+    "sizes": "30, 32, 36",
+    "unit": 699.0,
+    "wholesale": 23.0,
+    "colors": [
+      "#00357a",
+      "#000000",
+      "#428263"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH010",
+    "name": "Bermuda Akapi Caballero Multitono",
+    "category": "Bermudas",
+    "sizes": "S, M, L, XL",
+    "unit": 699.0,
+    "wholesale": 23.0,
+    "colors": [
+      "#bb8f72",
+      "#000000",
+      "#c77b49",
+      "#428263",
+      "#91b8e1",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC06",
+    "name": "Camiseta Akapi Caballero Básica",
+    "category": "Camisetas",
+    "sizes": "M, XL",
+    "unit": 599.0,
+    "wholesale": 20.0,
+    "colors": [
+      "#f8f7f2"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC04",
+    "name": "Camisa Manga Larga Akapi de Caballero",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL (Plus XXL)",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH074",
+    "name": "Jogger Cargo Caballero Comfort",
+    "category": "Pantalones",
+    "sizes": "28, 30, 32, 34, 36 (Plus 38)",
+    "unit": 849.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#ebd6b8",
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC16",
+    "name": "Camisa Premium de Caballero AKAPI",
+    "category": "Camisas",
+    "sizes": "L, XL (Plus XXL)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#f8f7f2",
+      "#ebd6b8"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH003",
+    "name": "Bermuda Caballero AKAPI Casual",
+    "category": "Bermudas",
+    "sizes": "L, XL (Plus XXL)",
+    "unit": 699.0,
+    "wholesale": 33.0,
+    "colors": [
+      "#f8f7f2",
+      "#ebd6b8"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR008",
+    "name": "Gorra Bicolor con Correa",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#e3c6c7",
+      "#ddc6a7",
+      "#65574f"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR006",
+    "name": "Gorra con Diseño Bordado",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR005",
+    "name": "Gorra con Malla y Broches",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR001",
+    "name": "Gorra Estampado Grande",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ffffff",
+      "#bb8f72",
+      "#000000",
+      "#65574f"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR007",
+    "name": "Gorra Militar con Correa",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#c77b49",
+      "#1c2120",
+      "#335c90"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR010",
+    "name": "Gorra de Brillos Street",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 20.0,
+    "colors": [
+      "#000000",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "GR012",
+    "name": "Gorra de Brillos Black",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 20.0,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR004",
+    "name": "Gorra Diseño Malla con Correa",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "SR01",
+    "name": "Sombrero de Colores",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ddc6a7"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "GR003",
+    "name": "Gorra con Diseño Militar",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR017",
+    "name": "Gorra Malla y Pasador",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#000000",
+      "#ffbd59"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR013",
+    "name": "Gorra con Malla Celeste",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "GR020",
+    "name": "AK Visera Deportiva",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ffffff",
+      "#1c2120",
+      "#ff2828"
+    ],
+    "photosCount": 1
+  },
+  {
+    "code": "GR018",
+    "name": "Gorra Malla Camuflaje",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 450.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ffffff",
+      "#e8ceb0"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR002",
+    "name": "Gorra Malla Negra con Broches",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#e3c6c7",
+      "#bb8f72",
+      "#a19da3",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "GR016",
+    "name": "Gorra con Elástico Flex",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "GR014",
+    "name": "Gorra con Pasador Clásica",
+    "category": "Gorras y Accesorios",
+    "sizes": "Estándar",
+    "unit": 499.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#335c90",
+      "#c77b49",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH21",
+    "name": "AKAPI Chaqueta Caballero Sport",
+    "category": "Chaquetas y Abrigos",
+    "sizes": "M, L, XL (Plus XXL)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#1c2120",
+      "#ffffff"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC18",
+    "name": "AKAPI Camisa Caballero Manga Corta",
+    "category": "Camisas",
+    "sizes": "S, L",
+    "unit": 800.0,
+    "wholesale": 29.0,
+    "colors": [
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "BH001",
+    "name": "Bermuda de Caballero Sport",
+    "category": "Bermudas",
+    "sizes": "32, 34, 36, 38",
+    "unit": 679.0,
+    "wholesale": 23.0,
+    "colors": [
+      "#428263",
+      "#0097b2",
+      "#ff2828",
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC14",
+    "name": "Camiseta Akapi Caballero Black",
+    "category": "Camisetas",
+    "sizes": "XL",
+    "unit": 750.0,
+    "wholesale": 29.0,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC29",
+    "name": "Camiseta de Caballero Soldi Vecchi Navy",
+    "category": "Camisetas",
+    "sizes": "S, M, L, XL, XXL",
+    "unit": 850.0,
+    "wholesale": 38.0,
+    "colors": [
+      "#335c90"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC27",
+    "name": "Camiseta de Caballero Soldi Vecchi White",
+    "category": "Camisetas",
+    "sizes": "S, M, L, XL, XXL",
+    "unit": 850.0,
+    "wholesale": 38.0,
+    "colors": [
+      "#ffffff",
+      "#1c2120",
+      "#a19da3"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC28",
+    "name": "Camisa de Caballero AKAPI Casual",
+    "category": "Camisas",
+    "sizes": "M, L, XL (Plus XXL)",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#ffffff",
+      "#1c2120"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC26",
+    "name": "Camiseta de Caballero Sopra Sand",
+    "category": "Camisetas",
+    "sizes": "M, L, XL",
+    "unit": 800.0,
+    "wholesale": 32.0,
+    "colors": [
+      "#ffffff",
+      "#ebd6b8"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC09",
+    "name": "Camiseta Bicolor Akapi Caballero",
+    "category": "Camisetas",
+    "sizes": "S, M, L, XL, XXL",
+    "unit": 799.0,
+    "wholesale": 29.0,
+    "colors": [
+      "#c77b49",
+      "#1c2120",
+      "#a19da3"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH006",
+    "name": "AKAPI Bermuda Caballero Denim Clásica",
+    "category": "Bermudas",
+    "sizes": "28, 30 (Plus 38)",
+    "unit": 749.0,
+    "wholesale": 33.0,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC15",
+    "name": "Camisa Akapi de Caballero Estampada",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL, XXL",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#ff2828",
+      "#e8ceb0",
+      "#bb8f72",
+      "#f8f7f2",
+      "#0d0d0d"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CC21",
+    "name": "Camiseta Caballero Sopra Ivory",
+    "category": "Camisetas",
+    "sizes": "M, L, XL",
+    "unit": 800.0,
+    "wholesale": 32.0,
+    "colors": [
+      "#ffffff",
+      "#e8ceb0"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH009",
+    "name": "AKAPI Bermuda Caballero Basic",
+    "category": "Bermudas",
+    "sizes": "S, M, L",
+    "unit": 750.0,
+    "wholesale": 25.0,
+    "colors": [
+      "#ebd6b8",
+      "#ffffff",
+      "#000000"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH010",
+    "name": "Pantalón Gabardina Caballero",
+    "category": "Pantalones",
+    "sizes": "28 a 36 (Plus 38, 40)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#000000",
+      "#163969",
+      "#a19da3",
+      "#bb8f72",
+      "#ddc6a7"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PH045",
+    "name": "Pantalón de Caballero Denim Blue",
+    "category": "Pantalones",
+    "sizes": "38",
+    "unit": 850.0,
+    "wholesale": 33.0,
+    "colors": [
+      "#335c90",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CC11",
+    "name": "Camisa de Caballero Diseño Rombo Premium",
+    "category": "Camisas",
+    "sizes": "S, M, L, XL (Plus XXL)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "colors": [
+      "#ffffff",
+      "#000000",
+      "#00357a"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "PH051",
+    "name": "Pantalón Gabardina Semitubo de Colores",
+    "category": "Pantalones",
+    "sizes": "30 a 36 (Plus 38 a 44)",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "colors": [
+      "#bb8f72",
+      "#428263",
+      "#000000",
+      "#00357a"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "BH011",
+    "name": "AKAPI Bermuda Caballero Dark",
+    "category": "Bermudas",
+    "sizes": "36",
+    "unit": 679.0,
+    "wholesale": 23.0,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 1
+  }
+];
+
+    // Application state
+    let monedaActual = 'Q';
+    let mostrarMayorEnTienda = true;
+    let categoriaSeleccionada = 'Todos';
+    let carrito = [];
+
+    // Load state from localStorage or use defaults
+    function cargarProductos() {
+      const guardado = localStorage.getItem('akapi_caballeros_2026');
+      if (guardado) {
+        try {
+          const parsed = JSON.parse(guardado);
+          // Actualizar photosCount si no existía en almacenamiento previo
+          parsed.forEach(p => {
+            const baseItem = CATALOGO_BASE.find(b => b.code === p.code);
+            if (baseItem && baseItem.photosCount) {
+              p.photosCount = baseItem.photosCount;
+            }
+          });
+          return parsed;
+        } catch (e) {
+          console.error("Error al cargar localStorage:", e);
+        }
+      }
+      return JSON.parse(JSON.stringify(CATALOGO_BASE));
+    }
+
+    let productos = cargarProductos();
+
+    function guardarProductos() {
+      localStorage.setItem('akapi_caballeros_2026', JSON.stringify(productos));
+    }
+
+    // Helper: Category Icon
+    function getIconoPorCategoria(cat) {
+      switch (cat) {
+        case 'Camisas': return 'fa-solid fa-shirt';
+        case 'Camisetas': return 'fa-solid fa-vest-patches';
+        case 'Pantalones': return 'fa-solid fa-person';
+        case 'Bermudas': return 'fa-solid fa-tags';
+        case 'Chaquetas y Abrigos': return 'fa-solid fa-vest';
+        case 'Gorras y Accesorios': return 'fa-solid fa-hat-cowboy';
+        case 'Conjuntos': return 'fa-solid fa-layer-group';
+        default: return 'fa-solid fa-tag';
+      }
+    }
+
+    // Fallback inteligente: si falla _1.jpg intenta con [CODE].jpg completo, y si falla pasa a fotos/
+    function fallbackSingle(code, imgElement) {
+      const wrap = document.getElementById('media-' + code);
+      if (wrap && !wrap.dataset.fallbackDone) {
+        wrap.dataset.fallbackDone = "1";
+        wrap.className = "";
+        wrap.innerHTML = `
+          <img src="fotos_caballero/${code}.jpg" 
+               data-code="${code}" 
+               class="mosaic-1" 
+               alt="${code}" 
+               onerror="manejarErrorImagen(this)">
+          <i class="${getIconoPorCategoria(wrap.dataset.category || '')} card-illustration" style="display: none;"></i>
+        `;
+      }
+    }
+
+    function manejarErrorImagen(img) {
+      const code = img.dataset.code;
+      const paso = parseInt(img.dataset.paso || "0", 10);
+      if (paso === 0) {
+        img.dataset.paso = "1";
+        img.src = 'fotos/' + code + '.jpg';
+      } else if (paso === 1) {
+        img.dataset.paso = "2";
+        img.src = 'fotos_caballero/' + code + '_1.jpg';
+      } else {
+        img.style.display = 'none';
+        const parent = img.parentElement;
+        if (parent) {
+          const icon = parent.querySelector('.card-illustration');
+          if (icon) icon.style.display = 'block';
+        }
+      }
+    }
+
+    // Generador dinámico de estructura fotográfica en mosaico
+    function renderizarMedioProducto(p) {
+      const photos = p.photosCount || 1;
+      const folder = 'fotos_caballero/';
+
+      if (photos === 3) {
+        return `
+          <div class="mosaic-3" id="media-${p.code}" data-category="${p.category}">
+            <img src="${folder}${p.code}_1.jpg" class="img-alta" alt="${p.name} 1" onerror="fallbackSingle('${p.code}', this)">
+            <img src="${folder}${p.code}_2.jpg" class="img-arriba" alt="${p.name} 2" onerror="this.style.display='none'">
+            <img src="${folder}${p.code}_3.jpg" class="img-abajo" alt="${p.name} 3" onerror="this.style.display='none'">
+          </div>
+          <i class="${getIconoPorCategoria(p.category)} card-illustration" style="display: none;"></i>
+        `;
+      } else if (photos === 2) {
+        return `
+          <div class="mosaic-2" id="media-${p.code}" data-category="${p.category}">
+            <img src="${folder}${p.code}_1.jpg" alt="${p.name} 1" onerror="fallbackSingle('${p.code}', this)">
+            <img src="${folder}${p.code}_2.jpg" alt="${p.name} 2" onerror="this.style.display='none'">
+          </div>
+          <i class="${getIconoPorCategoria(p.category)} card-illustration" style="display: none;"></i>
+        `;
+      } else {
+        return `
+          <img src="${folder}${p.code}.jpg" 
+               data-code="${p.code}" 
+               alt="${p.name}" 
+               class="mosaic-1" 
+               loading="lazy" 
+               onerror="manejarErrorImagen(this)">
+          <i class="${getIconoPorCategoria(p.category)} card-illustration" style="display: none;"></i>
+        `;
+      }
+    }
+
+    // ----------------------------------------------------
+    // VISTA 1: TIENDA ONLINE
+    // ----------------------------------------------------
+    function renderizarTienda() {
+      const contenedor = document.getElementById('grid-productos');
+      const busqueda = (document.getElementById('store-search').value || '').toLowerCase().trim();
+
+      const itemsFiltrados = productos.filter(p => {
+        const coincideCat = (categoriaSeleccionada === 'Todos') || (p.category === categoriaSeleccionada);
+        const coincideTxt = p.code.toLowerCase().includes(busqueda) || 
+                            p.name.toLowerCase().includes(busqueda) || 
+                            p.sizes.toLowerCase().includes(busqueda);
+        return coincideCat && coincideTxt;
+      });
+
+      document.getElementById('stat-total-models').innerText = productos.length;
+
+      if (itemsFiltrados.length === 0) {
+        contenedor.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #64748b;">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 2.5rem; margin-bottom: 12px; color: #cbd5e1;"></i>
+            <h3>No se encontraron productos</h3>
+            <p>Intenta con otro término de búsqueda o selecciona otra categoría.</p>
+          </div>
+        `;
+        return;
+      }
+
+      contenedor.innerHTML = itemsFiltrados.map(p => `
+        <article class="product-card">
+          <div class="card-media">
+            <div class="card-badge-top">
+              <span class="tag-code">${p.code}</span>
+            </div>
+
+            <!-- Mosaico Dinámico (1 alta izquierda + 2 apiladas derecha, o 2 lado a lado) -->
+            ${renderizarMedioProducto(p)}
+
+            <div class="card-colors">
+              ${(p.colors || ['#163969', '#000000']).map(c => `<span class="color-dot" style="background-color: ${c};"></span>`).join('')}
+            </div>
+          </div>
+
+          <div class="card-body">
+            <span class="card-category">${p.category}</span>
+            <h3 class="card-title">${p.name}</h3>
+
+            <div class="card-sizes">
+              <i class="fa-solid fa-ruler-horizontal"></i>
+              <span>Tallas: ${p.sizes}</span>
+            </div>
+
+            <div class="card-pricing">
+              <div class="price-unit-col">
+                <span class="price-label">Precio Unitario</span>
+                <span class="price-unit-val">${monedaActual}${p.unit.toFixed(2)}</span>
+              </div>
+            </div>
+
+            <button class="card-btn" onclick="agregarAlCarrito('${p.code}')">
+              <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filtrarProductosTienda() {
+      renderizarTienda();
+    }
+
+    function filtrarCategoria(cat, btn) {
+      categoriaSeleccionada = cat;
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderizarTienda();
+    }
+
+    // ----------------------------------------------------
+    // VISTA 2: ADMINISTRADOR DE PRECIOS
+    // ----------------------------------------------------
+    function renderizarAdmin() {
+      const tbody = document.getElementById('tbody-admin-productos');
+      const busqueda = (document.getElementById('admin-search')?.value || '').toLowerCase().trim();
+
+      const filtrados = productos.filter(p => 
+        p.code.toLowerCase().includes(busqueda) || 
+        p.name.toLowerCase().includes(busqueda)
+      );
+
+      tbody.innerHTML = filtrados.map(p => {
+        const ganancia = p.unit - p.wholesale;
+        const gananciaPct = p.wholesale > 0 ? ((ganancia / p.wholesale) * 100).toFixed(0) : 0;
+        return `
+          <tr>
+            <td>
+              <div class="admin-thumb">
+                <img src="fotos_caballero/${p.code}_1.jpg" 
+                     data-code="${p.code}"
+                     alt="${p.code}" 
+                     onerror="manejarErrorImagen(this)">
+                <i class="${getIconoPorCategoria(p.category)}" style="display: none; font-size: 1.2rem;"></i>
+              </div>
+            </td>
+            <td><strong style="color: var(--primary);">${p.code}</strong></td>
+            <td><strong>${p.name}</strong></td>
+            <td><span style="font-size:0.75rem; color:#64748b;">${p.category}</span></td>
+            <td>${p.sizes}</td>
+            <td>
+              <div style="display:flex; align-items:center; gap:4px;">
+                <span>${monedaActual}</span>
+                <input type="number" step="0.5" class="price-input-cell" value="${p.unit.toFixed(2)}" 
+                  onchange="actualizarPrecio('${p.code}', 'unit', this.value)">
+              </div>
+            </td>
+            <td>
+              <div style="display:flex; align-items:center; gap:4px;">
+                <span>${monedaActual}</span>
+                <input type="number" step="0.5" class="price-input-cell" value="${p.wholesale.toFixed(2)}" 
+                  onchange="actualizarPrecio('${p.code}', 'wholesale', this.value)">
+              </div>
+            </td>
+            <td>
+              <span class="profit-pill">+${monedaActual}${ganancia.toFixed(2)} (${gananciaPct}%)</span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function actualizarPrecio(code, campo, valor) {
+      const num = parseFloat(valor);
+      if (isNaN(num) || num < 0) return;
+      const prod = productos.find(p => p.code === code);
+      if (prod) {
+        prod[campo] = num;
+        guardarProductos();
+        renderizarAdmin();
+        renderizarTienda();
+        renderizarPDF();
+      }
+    }
+
+    function filtrarTablaAdmin() {
+      renderizarAdmin();
+    }
+
+    function aplicarAjustePorcentual(campo) {
+      const inputId = campo === 'unit' ? 'batch-unit-pct' : 'batch-wholesale-pct';
+      const pct = parseFloat(document.getElementById(inputId).value);
+      if (isNaN(pct)) return;
+
+      if (!confirm(`¿Deseas aplicar un ${pct > 0 ? '+' : ''}${pct}% a todos los precios ${campo === 'unit' ? 'unitarios' : 'de mayoreo'}?`)) {
+        return;
+      }
+
+      productos.forEach(p => {
+        p[campo] = Math.round((p[campo] * (1 + (pct / 100))) * 100) / 100;
+      });
+
+      guardarProductos();
+      renderizarAdmin();
+      renderizarTienda();
+      renderizarPDF();
+      alert(`Precios ${campo === 'unit' ? 'unitarios' : 'de mayoreo'} actualizados con éxito.`);
+    }
+
+    function restablecerPreciosOriginales() {
+      if (confirm("¿Estás seguro de que deseas restablecer todos los precios a los valores iniciales del catálogo?")) {
+        productos = JSON.parse(JSON.stringify(CATALOGO_BASE));
+        guardarProductos();
+        renderizarAdmin();
+        renderizarTienda();
+        renderizarPDF();
+        alert("Precios restablecidos correctamente.");
+      }
+    }
+
+    function toggleVisibilidadPrecios() {
+      mostrarMayorEnTienda = document.getElementById('toggle-show-wholesale').checked;
+      renderizarTienda();
+    }
+
+    function cambiarMoneda(m) {
+      monedaActual = m;
+      renderizarAdmin();
+      renderizarTienda();
+      renderizarPDF();
+    }
+
+    // ----------------------------------------------------
+    // VISTA 3: GENERADOR Y EXPORTADOR PDF
+    // ----------------------------------------------------
+    function renderizarPDF() {
+      const contenedor = document.getElementById('pdf-grid-items');
+      const incluirMayor = false; // document.getElementById('pdf-toggle-wholesale')?.checked ?? true;
+
+      contenedor.innerHTML = productos.map(p => `
+        <div class="print-item">
+          <div class="print-item-thumb">
+            <img src="fotos_caballero/${p.code}_1.jpg" 
+                 data-code="${p.code}"
+                 alt="${p.name}" 
+                 onerror="manejarErrorImagen(this)">
+            <i class="${getIconoPorCategoria(p.category)}" style="display: none;"></i>
+          </div>
+          <div class="print-item-code">${p.code}</div>
+          <div class="print-item-name">${p.name}</div>
+          <div class="print-item-sizes">Tallas: ${p.sizes}</div>
+          <div class="print-item-prices">
+            <span>P. Unit: ${monedaActual}${p.unit.toFixed(2)}</span>
+            ${incluirMayor ? `<span style="color:var(--wholesale-color);">P. Mayor: ${monedaActual}${p.wholesale.toFixed(2)}</span>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function actualizarVistaPDF() {
+      renderizarPDF();
+    }
+
+    function imprimirODescargarPDF() {
+      window.print();
+    }
+
+    // ----------------------------------------------------
+    // GESTIÓN DE CARRITO Y PEDIDOS POR WHATSAPP
+    // ----------------------------------------------------
+    function toggleCarrito(abrir) {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      if (abrir) {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        renderizarCarrito();
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    function agregarAlCarrito(code) {
+      const prod = productos.find(p => p.code === code);
+      if (!prod) return;
+
+      const itemExistente = carrito.find(item => item.code === code);
+      if (itemExistente) {
+        itemExistente.qty += 1;
+      } else {
+        carrito.push({
+          code: prod.code,
+          name: prod.name,
+          category: prod.category,
+          unit: prod.unit,
+          wholesale: prod.wholesale,
+          sizes: prod.sizes,
+          img: 'fotos_caballero/' + prod.code + '_1.jpg',
+          qty: 1
+        });
+      }
+
+      actualizarContadorCarrito();
+      toggleCarrito(true);
+    }
+
+    function modificarCantidad(code, delta) {
+      const item = carrito.find(i => i.code === code);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          carrito = carrito.filter(i => i.code !== code);
+        }
+      }
+      actualizarContadorCarrito();
+      renderizarCarrito();
+    }
+
+    function actualizarContadorCarrito() {
+      const totalPrendas = carrito.reduce((acc, i) => acc + i.qty, 0);
+      document.getElementById('cart-counter').innerText = totalPrendas;
+    }
+
+    function renderizarCarrito() {
+      const contenedor = document.getElementById('cart-items-container');
+      const tarifa = document.getElementById('cart-price-tier').value;
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = `
+          <div style="text-align: center; padding: 40px 10px; color: var(--text-muted);">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 2.2rem; color: #cbd5e1; margin-bottom: 10px;"></i>
+            <p>Tu lista de pedido está vacía.</p>
+            <span style="font-size: 0.78rem;">Agrega modelos del catálogo para cotizar.</span>
+          </div>
+        `;
+        document.getElementById('cart-items-count').innerText = "0 prendas";
+        document.getElementById('cart-total-amount').innerText = `${monedaActual}0.00`;
+        return;
+      }
+
+      let subtotal = 0;
+      let totalPrendas = 0;
+
+      contenedor.innerHTML = carrito.map(item => {
+        const precioUnitario = tarifa === 'wholesale' ? item.wholesale : item.unit;
+        const totalItem = precioUnitario * item.qty;
+        subtotal += totalItem;
+        totalPrendas += item.qty;
+
+        return `
+          <div class="cart-item">
+            <div class="cart-item-thumb">
+              <img src="${item.img}" 
+                   data-code="${item.code}"
+                   alt="${item.name}" 
+                   onerror="manejarErrorImagen(this)">
+              <i class="${getIconoPorCategoria(item.category)}" style="display: none;"></i>
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.code} - ${item.name}</div>
+              <div class="cart-item-sub">${monedaActual}${precioUnitario.toFixed(2)} c/u &bull; Tallas: ${item.sizes}</div>
+              <div class="cart-qty-ctrl">
+                <button class="qty-btn" onclick="modificarCantidad('${item.code}', -1)">-</button>
+                <span style="font-size: 0.85rem; font-weight:700;">${item.qty}</span>
+                <button class="qty-btn" onclick="modificarCantidad('${item.code}', 1)">+</button>
+              </div>
+            </div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--navy-deep);">
+              ${monedaActual}${totalItem.toFixed(2)}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cart-items-count').innerText = `${totalPrendas} prendas`;
+      document.getElementById('cart-total-amount').innerText = `${monedaActual}${subtotal.toFixed(2)}`;
+    }
+
+    function enviarPedidoWhatsApp() {
+      if (carrito.length === 0) {
+        alert("Agrega al menos una prenda antes de enviar el pedido.");
+        return;
+      }
+
+      const tarifa = document.getElementById('cart-price-tier').value;
+      const tarifaTexto = tarifa === 'wholesale' ? 'PRECIO DE MAYOREO' : 'PRECIO UNITARIO';
+      
+      let mensaje = `*¡HOLA! DESEO REALIZAR UN PEDIDO DEL CATÁLOGO DE CABALLERO AKAPI 2026*\\n`;
+      mensaje += `Modalidad: *${tarifaTexto}*\\n\\n`;
+      mensaje += `*DETALLE DE PRENDAS:*\\n`;
+
+      let total = 0;
+      carrito.forEach((item, index) => {
+        const precio = tarifa === 'wholesale' ? item.wholesale : item.unit;
+        const sub = precio * item.qty;
+        total += sub;
+        mensaje += `${index + 1}. [${item.code}] ${item.name}\\n`;
+        mensaje += `   - Cantidad: ${item.qty} | Tallas: ${item.sizes}\\n`;
+        mensaje += `   - Subtotal: ${monedaActual}${sub.toFixed(2)}\\n`;
+      });
+
+      mensaje += `\\n*TOTAL ESTIMADO:* ${monedaActual}${total.toFixed(2)}\\n\\n`;
+      mensaje += `Por favor indícame la disponibilidad de colores y proceso de pago. ¡Gracias!`;
+
+      // Puedes cambiar el número telefónico aquí:
+      const telefonoWhatsApp = "50258000126"; 
+      const url = `https://api.whatsapp.com/send?phone=${telefonoWhatsApp}&text=${encodeURIComponent(mensaje.replace(/\\\\n/g, '\\n'))}`;
+      window.open(url, '_blank');
+    }
+
+    // ----------------------------------------------------
+    // NAVEGACIÓN ENTRE VISTAS
+    // ----------------------------------------------------
+    function cambiarVista(vista) {
+      document.getElementById('view-tienda').style.display = vista === 'tienda' ? 'block' : 'none';
+      document.getElementById('view-admin').style.display = vista === 'admin' ? 'block' : 'none';
+      document.getElementById('view-pdf').style.display = vista === 'pdf' ? 'block' : 'none';
+
+      document.getElementById('tab-tienda').classList.toggle('active', vista === 'tienda');
+      document.getElementById('tab-admin').classList.toggle('active', vista === 'admin');
+      document.getElementById('tab-pdf').classList.toggle('active', vista === 'pdf');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize application on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderizarTienda();
+      renderizarAdmin();
+      renderizarPDF();
+      actualizarContadorCarrito();
+    });
+  </script>
+</body>
+</html>

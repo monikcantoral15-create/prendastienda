@@ -1,0 +1,3338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKAPI 2026 - Catálogo de Damas & Tienda Online</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --terracotta: #c77b49;
+      --terracotta-dark: #a85d2e;
+      --terracotta-light: #fbeee6;
+      --navy-dark: #162438;
+      --navy-light: #243b55;
+      --bg-gray: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --success: #10b981;
+      --wholesale-color: #0284c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-gray);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: linear-gradient(90deg, #162438, #2d3748);
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar .highlight {
+      color: #f6ad55;
+      font-weight: 600;
+    }
+
+    /* Main Navigation Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo {
+      background: var(--terracotta);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(199, 123, 73, 0.35);
+    }
+    .brand-info h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      letter-spacing: 0.5px;
+    }
+    .brand-info p {
+      font-size: 0.72rem;
+      color: var(--terracotta);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-tabs {
+      display: flex;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+    }
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      color: var(--navy-dark);
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--terracotta);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-cart {
+      background: var(--navy-dark);
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .btn-cart:hover {
+      background: var(--navy-light);
+      transform: translateY(-1px);
+    }
+    .cart-badge {
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    /* Container */
+    .main-content {
+      max-width: 1300px;
+      margin: 24px auto;
+      padding: 0 20px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #162438 0%, #293d5a 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(22, 36, 56, 0.2);
+    }
+    .hero-banner::after {
+      content: "EFECTO OPERADA";
+      position: absolute;
+      right: -20px;
+      bottom: -15px;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+      letter-spacing: 4px;
+    }
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      margin-bottom: 8px;
+    }
+    .hero-text p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+    .hero-badge {
+      background: rgba(199, 123, 73, 0.2);
+      border: 1px solid var(--terracotta);
+      color: #fdbb74;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .stat-box .number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fdbb74;
+      display: block;
+    }
+    .stat-box .label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Store Toolbar */
+    .store-toolbar {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px rgba(199, 123, 73, 0.15);
+    }
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill-btn:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
+    }
+    .pill-btn.active {
+      background: var(--terracotta);
+      color: #ffffff;
+      border-color: var(--terracotta);
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      border-color: var(--terracotta);
+    }
+
+    /* Media Box: Fondo limpio y ajuste 'contain' para mostrar fotos completas sin cortes */
+    .card-media {
+      height: 330px;
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      padding: 8px;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .card-img {
+      transform: scale(1.03);
+    }
+    .card-illustration {
+      font-size: 4.5rem;
+      color: #94a3b8;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+    }
+    .card-badge-top {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 2;
+    }
+    .tag-operada {
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+    .tag-code {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--navy-dark);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .card-colors {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      display: flex;
+      gap: 5px;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      padding: 4px 8px;
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .color-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+    .card-body {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-category {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+      line-height: 1.35;
+      min-height: 2.7rem;
+    }
+    .card-sizes {
+      font-size: 0.78rem;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-pricing {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 14px;
+    }
+    .price-unit-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .price-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .price-unit-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+    }
+    .price-wholesale-col {
+      text-align: right;
+    }
+    .price-wholesale-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--wholesale-color);
+      background: #e0f2fe;
+      padding: 2px 7px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .card-btn {
+      width: 100%;
+      background: var(--terracotta);
+      color: #fff;
+      border: none;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .card-btn:hover {
+      background: var(--terracotta-dark);
+    }
+
+    /* Admin Price Editor Panel */
+    .admin-panel {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .admin-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--navy-dark);
+    }
+    .admin-header p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    /* Batch Adjust Tools */
+    .batch-tools {
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .batch-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .batch-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .batch-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .batch-input {
+      width: 80px;
+      padding: 7px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .btn-action {
+      background: var(--navy-dark);
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      background: var(--navy-light);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      color: var(--navy-dark);
+    }
+
+    /* Switch toggle */
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1; transition: .3s; border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+      background-color: white; transition: .3s; border-radius: 50%;
+    }
+    input:checked + .slider { background-color: var(--terracotta); }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    /* Admin Table */
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.86rem;
+    }
+    .admin-table th {
+      background: #f8fafc;
+      padding: 12px 14px;
+      font-weight: 700;
+      color: var(--navy-dark);
+      border-bottom: 2px solid var(--border-color);
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      letter-spacing: 0.5px;
+    }
+    .admin-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    .admin-table tr:hover {
+      background: #f8fafc;
+    }
+    .admin-thumb {
+      width: 50px;
+      height: 60px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+    }
+    .admin-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .price-input-cell {
+      width: 110px;
+      padding: 6px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+    }
+    .price-input-cell:focus {
+      outline: none;
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 2px rgba(199, 123, 73, 0.2);
+    }
+    .profit-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--success);
+      background: #ecfdf5;
+      padding: 3px 8px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    /* PDF Generator Preview */
+    .pdf-preview-panel {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 28px;
+    }
+    .pdf-controls {
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-download-pdf {
+      background: var(--terracotta);
+      color: #fff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(199, 123, 73, 0.3);
+      transition: all 0.2s;
+    }
+    .btn-download-pdf:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Printable Catalog Sheet Format */
+    .printable-sheet {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .print-header {
+      border-bottom: 2px solid var(--terracotta);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .print-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--navy-dark);
+    }
+    .print-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .print-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .print-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+      page-break-inside: avoid;
+    }
+    .print-item-thumb {
+      height: 180px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .print-item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .print-item-code {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--terracotta);
+    }
+    .print-item-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin: 2px 0 4px 0;
+      line-height: 1.25;
+    }
+    .print-item-sizes {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .print-item-prices {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    /* Cart Drawer / Modal */
+    .drawer-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -420px; width: 400px; max-width: 90vw; height: 100vh;
+      background: #ffffff;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cart-drawer.open {
+      right: 0;
+    }
+    .drawer-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .drawer-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy-dark);
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .drawer-body {
+      padding: 20px;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .cart-item {
+      display: flex;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+      align-items: center;
+    }
+    .cart-item-thumb {
+      width: 65px;
+      height: 65px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 1.4rem;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cart-item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      line-height: 1.2;
+    }
+    .cart-item-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .cart-qty-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .qty-btn {
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border-color);
+      background: #f1f5f9;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .drawer-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+      background: #f8fafc;
+    }
+    .cart-summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+    .cart-total-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-color);
+    }
+    .btn-whatsapp-order {
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      transition: all 0.2s;
+    }
+    .btn-whatsapp-order:hover {
+      background: #20ba59;
+    }
+
+    /* Print Styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .printable-sheet, .printable-sheet * {
+        visibility: visible;
+      }
+      .printable-sheet {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+      .top-bar, header, .hero-banner, .store-toolbar, .pdf-controls, .nav-tabs {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .print-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-banner {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-tabs {
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div>
+      <i class="fa-solid fa-sparkles"></i> <strong>COLECCIÓN AKAPI 2026</strong> | Pantalones, Jeans, Chaquetas y Enterizos
+    </div>
+    <div>
+      <span class="highlight" style="display: none !important;"><i class="fa-brands fa-whatsapp"></i> Pedidos y Mayoristas</span>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand" onclick="cambiarVista('tienda')">
+        <div class="brand-logo">MV</div>
+        <div class="brand-info">
+          <h1>AKAPI - Colección Damas 2026</h1>
+          <p>#EfectoOperada & Moda Denim</p>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" style="display:none;">
+        <button class="tab-btn active" id="tab-tienda" onclick="cambiarVista('tienda')">
+          <i class="fa-solid fa-store"></i> Tienda Online
+        </button>
+        <button class="tab-btn" id="tab-admin" onclick="cambiarVista('admin')">
+          <i class="fa-solid fa-tags"></i> Modificar Precios
+        </button>
+        <button class="tab-btn" id="tab-pdf" onclick="cambiarVista('pdf')">
+          <i class="fa-solid fa-file-pdf"></i> Exportar PDF
+        </button>
+      </nav>
+
+      <!-- Cart Button -->
+      <div class="nav-actions">
+        <button class="btn-cart" onclick="toggleCarrito(true)">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Pedido</span>
+          <span class="cart-badge" id="cart-counter">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- ==================== VIEW 1: TIENDA ONLINE ==================== -->
+    <section id="view-tienda">
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <div class="hero-text">
+          <span class="hero-badge"><i class="fa-solid fa-gem"></i> NUEVA TEMPORADA 2026</span>
+          <h2>Colección Efecto Operada</h2>
+          <p>Jeans con control de broches, basta ancha, wide leg, skinny, enterizos y chaquetas. Descubre las prendas de silueta perfecta en venta al detalle y por mayor.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="number" id="stat-total-models">100+</span>
+            <span class="label">Modelos</span>
+          </div>
+          <div class="stat-box">
+            <span class="number">6 a 24</span>
+            <span class="label">Tallas Plus & Reg.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Store Filters and Toolbar -->
+      <div class="store-toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="store-search" placeholder="Buscar por código (ej. P195, P199, B004) o nombre..." oninput="filtrarProductosTienda()">
+        </div>
+
+        <div class="category-pills">
+          <button class="pill-btn active" onclick="filtrarCategoria('Todos', this)">Todos</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Jeans y Pantalones', this)">Jeans y Pantalones</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Shorts y Faldas', this)">Shorts y Faldas</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Chaquetas', this)">Chaquetas</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Vestidos y Enterizos', this)">Vestidos</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Tops y Blusas', this)">Tops y Blusas</button>
+          <button class="pill-btn" onclick="filtrarCategoria('Calzado', this)">Calzado</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="grid-productos">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: ADMINISTRADOR DE PRECIOS ==================== -->
+    <section id="view-admin" style="display: none;">
+      <div class="admin-panel">
+        <div class="admin-header">
+          <div>
+            <h2><i class="fa-solid fa-sliders"></i> Panel de Precios y Márgenes</h2>
+            <p>Modifica los precios unitarios y de mayoreo de cada artículo en tiempo real. Los cambios se guardan automáticamente.</p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <button class="btn-outline" onclick="restablecerPreciosOriginales()">
+              <i class="fa-solid fa-rotate-left"></i> Restablecer Originales
+            </button>
+            <button class="btn-action" onclick="cambiarVista('tienda')">
+              <i class="fa-solid fa-check"></i> Ver en Tienda
+            </button>
+          </div>
+        </div>
+
+        <!-- Global Batch Adjust Tools -->
+        <div class="batch-tools">
+          <div class="batch-title">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--terracotta);"></i> Ajuste Masivo:
+          </div>
+
+          <div class="batch-group">
+            <label>Aplicar % a Unitario:</label>
+            <input type="number" id="batch-unit-pct" class="batch-input" placeholder="+10" value="10">
+            <button class="btn-action" onclick="aplicarAjustePorcentual('unit')">Aplicar %</button>
+          </div>
+
+          <div class="batch-group">
+            <label>Aplicar % a Mayor:</label>
+            <input type="number" id="batch-wholesale-pct" class="batch-input" placeholder="+10" value="10">
+            <button class="btn-action" onclick="aplicarAjustePorcentual('wholesale')">Aplicar %</button>
+          </div>
+
+          <div style="border-left: 1px solid var(--border-color); height: 28px; margin: 0 4px;"></div>
+
+          <div class="toggle-group">
+            <label class="switch">
+              <input type="checkbox" id="toggle-show-wholesale" checked onchange="toggleVisibilidadPrecios()">
+              <span class="slider"></span>
+            </label>
+            <span>Mostrar Precio Mayor en Tienda</span>
+          </div>
+
+          <div class="toggle-group" style="margin-left: 10px;">
+            <label>Moneda:</label>
+            <select id="select-moneda" class="batch-input" style="width: auto;" onchange="cambiarMoneda(this.value)">
+              <option value="$">USD ($)</option>
+              <option value="Q">GTQ (Q)</option>
+              <option value="€">EUR (€)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Search in Table -->
+        <div style="margin-bottom: 14px; max-width: 320px;">
+          <input type="text" id="admin-search" placeholder="Filtrar por código o nombre en tabla..." oninput="filtrarTablaAdmin()" class="batch-input" style="width: 100%; text-align: left; padding: 8px 12px;">
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Código</th>
+                <th>Nombre del Modelo</th>
+                <th>Categoría</th>
+                <th>Tallas</th>
+                <th>Efecto</th>
+                <th>Precio Unitario</th>
+                <th>Precio Mayor</th>
+                <th>Margen Ganancia</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-admin-productos">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: GENERADOR Y EXPORTADOR PDF ==================== -->
+    <section id="view-pdf" style="display: none;">
+      <div class="pdf-preview-panel">
+        <!-- PDF Control Bar -->
+        <div class="pdf-controls">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 4px;">
+              <i class="fa-solid fa-file-pdf" style="color: var(--terracotta);"></i> Exportación de Catálogo Listo para Compartir
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+              Genera un documento PDF limpio y estilizado con los precios y fotografías de tus prendas.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <div class="toggle-group">
+              <label class="switch">
+                <input type="checkbox" id="pdf-toggle-wholesale" checked onchange="actualizarVistaPDF()">
+                <span class="slider"></span>
+              </label>
+              <span>Incluir Precios de Mayoreo</span>
+            </div>
+
+            <button class="btn-download-pdf" onclick="imprimirODescargarPDF()">
+              <i class="fa-solid fa-print"></i> Imprimir o Guardar como PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Printable Document Area -->
+        <div class="printable-sheet" id="printable-area">
+          <div class="print-header">
+            <div>
+              <h1>AKAPI - CATÁLOGO DE DAMAS 2026</h1>
+              <p>Colección Efecto Operada &bull; Jeans, Pantalones, Chaquetas y Vestidos</p>
+            </div>
+            <div style="text-align: right;">
+              <p style="font-weight: 700; color: var(--terracotta); font-size: 1.1rem;">PEDIDOS Y VENTAS</p>
+              <p id="print-contact-info">WhatsApp Oficial: +502 0000-0000</p>
+            </div>
+          </div>
+
+          <div class="print-grid" id="pdf-grid-items">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== SHOPPING CART DRAWER ==================== -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="toggleCarrito(false)"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3><i class="fa-solid fa-bag-shopping" style="color: var(--terracotta);"></i> Tu Pedido</h3>
+      <button class="close-btn" onclick="toggleCarrito(false)"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="drawer-body" id="cart-items-container">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="drawer-footer">
+      <div style="margin-bottom: 12px; display: none;">
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--navy-dark); display: block; margin-bottom: 4px;">Tipo de Tarifa del Pedido:</label>
+        <select id="cart-price-tier" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); font-size: 0.85rem;" onchange="renderizarCarrito()">
+          <option value="unit">Precio Unitario (Venta al Detalle)</option>
+          <option value="wholesale">Precio Mayorista (Venta por Mayor)</option>
+        </select>
+      </div>
+
+      <div class="cart-summary-line">
+        <span>Artículos seleccionados:</span>
+        <span id="cart-items-count">0 prendas</span>
+      </div>
+      <div class="cart-total-line">
+        <span>Total Estimado:</span>
+        <span id="cart-total-amount">$0.00</span>
+      </div>
+
+      <button class="btn-whatsapp-order" onclick="enviarPedidoWhatsApp()">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== APPLICATION SCRIPT ==================== -->
+  <script>
+    // Initial catalog dataset from user's catalogue
+    const CATALOGO_BASE = [
+  {
+    "code": "P001",
+    "name": "Akapi Basta Ancha de Rayas",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 18",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P199",
+    "name": "Pantalón Palazzo Sin Bolsillo",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P195",
+    "name": "Akapi Skinny para Altas",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 14",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PR10",
+    "name": "Akapi Sandalias",
+    "category": "Calzado",
+    "sizes": "36, 37, 38",
+    "unit": 299.0,
+    "wholesale": 10.0,
+    "efecto": false,
+    "colors": [
+      "#333333",
+      "#c77b49"
+    ],
+    "photosCount": 1
+  },
+  {
+    "code": "PR07",
+    "name": "Zapatos AKAPI",
+    "category": "Calzado",
+    "sizes": "36, 37, 38, 39",
+    "unit": 350.0,
+    "wholesale": 20.0,
+    "efecto": false,
+    "colors": [
+      "#333333",
+      "#777777"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P195B",
+    "name": "Skinny con Faja Control de Broches",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 900.0,
+    "wholesale": 39.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "img": "fotos/P195_2.jpg",
+    "photosCount": 3
+  },
+  {
+    "code": "P197",
+    "name": "Pantalón Basta Ancha con Faja Broches",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 999.0,
+    "wholesale": 42.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P196",
+    "name": "Pantalón Basta Ancha con Faja Broches",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 999.0,
+    "wholesale": 42.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "PR03",
+    "name": "Camiseta Selección Ecuador",
+    "category": "Tops y Blusas",
+    "sizes": "M, L, XL",
+    "unit": 700.0,
+    "wholesale": 25.0,
+    "efecto": false,
+    "colors": [
+      "#e7c00c",
+      "#163969",
+      "#ff2828"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P063",
+    "name": "Skinny AKAPI Clásico",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 14 (Plus 18)",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "B004",
+    "name": "Corset Mundialista",
+    "category": "Tops y Blusas",
+    "sizes": "Estándar",
+    "unit": 350.0,
+    "wholesale": 15.0,
+    "efecto": false,
+    "colors": [
+      "#e7c00c",
+      "#163969"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P189",
+    "name": "Pantalón Mega Wide Leg",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 18",
+    "unit": 850.0,
+    "wholesale": 37.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P198",
+    "name": "Pantalón Wide Leg",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P182",
+    "name": "Pantalón Wide Leg Deshilachado",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16 (Plus 18)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P175",
+    "name": "Pantalón Basta Ancha 3 Botones",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P071",
+    "name": "Skinny de 3 Botones",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "V008",
+    "name": "Vestido Corte AKAPI",
+    "category": "Vestidos y Enterizos",
+    "sizes": "6, 8, 10, 12, 14",
+    "unit": 845.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P114",
+    "name": "Pantalón Palazzo Elegante",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 18",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P186",
+    "name": "Pantalón Basta Ancha Petite",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 14",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P054",
+    "name": "Pantalón Skinny Akapi Curvy",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 14 (Plus 18 a 24)",
+    "unit": 850.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH05",
+    "name": "Chaqueta Jean Clásica",
+    "category": "Chaquetas",
+    "sizes": "S a XL",
+    "unit": 849.0,
+    "wholesale": 36.0,
+    "efecto": false,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CH06",
+    "name": "Chaqueta Jean Denim",
+    "category": "Chaquetas",
+    "sizes": "S, M, L",
+    "unit": 849.0,
+    "wholesale": 35.0,
+    "efecto": false,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CH08",
+    "name": "Chaqueta Crop Animal Print",
+    "category": "Chaquetas",
+    "sizes": "S, M, L",
+    "unit": 849.0,
+    "wholesale": 35.0,
+    "efecto": false,
+    "colors": [
+      "#163969",
+      "#c77b49"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P184",
+    "name": "Pantalón Basta Ancha con Faja",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 900.0,
+    "wholesale": 38.0,
+    "efecto": true,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P066",
+    "name": "Pantalón Skinny",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P075",
+    "name": "Pantalón Mom Jean Rígido",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P181",
+    "name": "Pantalón Basta Recta",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH07",
+    "name": "Chaqueta Bicolor Akapi",
+    "category": "Chaquetas",
+    "sizes": "S, M, L",
+    "unit": 875.0,
+    "wholesale": 36.0,
+    "efecto": false,
+    "colors": [
+      "#163969",
+      "#487eb6"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P128",
+    "name": "Pantalón Basta Ancha Premium",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 870.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P178",
+    "name": "Pantalón Wide Leg Confort",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P179",
+    "name": "Pantalón Basta Ancha con Regulador",
+    "category": "Jeans y Pantalones",
+    "sizes": "14 (Plus 20)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P180",
+    "name": "Wide Leg con Faja Cinturas Anchas",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 950.0,
+    "wholesale": 38.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S004",
+    "name": "Short Cargo Efecto Tiro Alto",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S006",
+    "name": "Short Stretch AKAPI",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P127",
+    "name": "Pantalón Wide Leg Líneas",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P166",
+    "name": "Wide Leg con Brillos AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P126",
+    "name": "Pantalón Mega Wide Leg Relax",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 12",
+    "unit": 875.0,
+    "wholesale": 37.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "V010",
+    "name": "Maxi Vestido Jean Largo",
+    "category": "Vestidos y Enterizos",
+    "sizes": "8 y 10",
+    "unit": 899.0,
+    "wholesale": 39.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "E001",
+    "name": "Enterizo AKAPI Denim",
+    "category": "Vestidos y Enterizos",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P152",
+    "name": "Wide Leg Rombos",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 875.0,
+    "wholesale": 38.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S070",
+    "name": "Short Akapi Efecto Operada",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S010",
+    "name": "Short Akapi Denim Clásico",
+    "category": "Shorts y Faldas",
+    "sizes": "8",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "S022",
+    "name": "Short Clásico Akapi",
+    "category": "Shorts y Faldas",
+    "sizes": "10 a 14 (plus 18, 20)",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S005",
+    "name": "Short AKAPI Efecto Tiro Alto",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "B006",
+    "name": "Blusa Crop Top Akapi",
+    "category": "Tops y Blusas",
+    "sizes": "S, M, L",
+    "unit": 599.0,
+    "wholesale": 14.0,
+    "efecto": false,
+    "colors": [
+      "#000000",
+      "#ffffff"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P076",
+    "name": "Pantalón Basta Recta Botones",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 y 10 (plus 18 al 24)",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P050",
+    "name": "Pantalón Skinny Varios Botones",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16 (plus 18 a 24)",
+    "unit": 850.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P151",
+    "name": "Wide Leg Floreado Akapi",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 870.0,
+    "wholesale": 38.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P118",
+    "name": "Pantalón Wide Leg Urbano",
+    "category": "Jeans y Pantalones",
+    "sizes": "16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P058",
+    "name": "Pantalón Cargo Doble Bolsillo",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "E002",
+    "name": "Enterizo Akapi Slim",
+    "category": "Vestidos y Enterizos",
+    "sizes": "6 a 14",
+    "unit": 800.0,
+    "wholesale": 31.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P125",
+    "name": "Pantalón Wide Leg Akapi",
+    "category": "Jeans y Pantalones",
+    "sizes": "14 y 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P115",
+    "name": "Pantalón Basta Ancha",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P026",
+    "name": "Skinny Efecto Operada Akapi",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P036",
+    "name": "Pantalón Skinny AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "B017",
+    "name": "Body Reversible Akapi",
+    "category": "Tops y Blusas",
+    "sizes": "Estándar",
+    "unit": 750.0,
+    "wholesale": 26.0,
+    "efecto": false,
+    "colors": [
+      "#000000",
+      "#efefef"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "V009",
+    "name": "Vestido Mangas Largas",
+    "category": "Vestidos y Enterizos",
+    "sizes": "8 a 14",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "F003",
+    "name": "MaxiFalda AKAPI",
+    "category": "Shorts y Faldas",
+    "sizes": "6 a 16",
+    "unit": 800.0,
+    "wholesale": 30.0,
+    "efecto": false,
+    "colors": [
+      "#335c90",
+      "#000000",
+      "#bb8f72",
+      "#7e1c22",
+      "#428263"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P171",
+    "name": "Pantalón AKAPI Globo",
+    "category": "Jeans y Pantalones",
+    "sizes": "12 a 16 (plus 18)",
+    "unit": 799.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P160",
+    "name": "Pantalón Cargo Tela Stretch",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P155",
+    "name": "Pantalón Wide Leg Clásico",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P143",
+    "name": "Jean Wide Leg",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16 (plus 18)",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#163969",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S013",
+    "name": "Short AKAPI Denim",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16",
+    "unit": 699.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#ffffff"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P153",
+    "name": "Cargo Doble Bolsillo",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#424651"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P148",
+    "name": "Wide Leg de Tela AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "12 y 18",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#bb8f72"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P027",
+    "name": "Mom Jeans AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "12 a 16",
+    "unit": 800.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "B016",
+    "name": "Blusa Brillo con Hilo",
+    "category": "Tops y Blusas",
+    "sizes": "Estándar",
+    "unit": 780.0,
+    "wholesale": 26.0,
+    "efecto": false,
+    "colors": [
+      "#000000",
+      "#ff2828"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "B013",
+    "name": "Blusa Brillo Mariposa",
+    "category": "Tops y Blusas",
+    "sizes": "Estándar",
+    "unit": 780.0,
+    "wholesale": 26.0,
+    "efecto": false,
+    "colors": [
+      "#000000",
+      "#ffffff",
+      "#ff2828"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "S025",
+    "name": "Falda Short AKAPI",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16",
+    "unit": 770.0,
+    "wholesale": 24.0,
+    "efecto": true,
+    "colors": [
+      "#163969"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S007",
+    "name": "Short AKAPI Vintage",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16 (plus 18, 20)",
+    "unit": 799.0,
+    "wholesale": 30.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P074",
+    "name": "Mom Jeans Elástico AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P168",
+    "name": "Pantalón Basta Ancha Recta",
+    "category": "Jeans y Pantalones",
+    "sizes": "8",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P159",
+    "name": "Basta Recta Premium AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "B038",
+    "name": "Blusa Estándar con Color",
+    "category": "Tops y Blusas",
+    "sizes": "Estándar",
+    "unit": 770.0,
+    "wholesale": 28.0,
+    "efecto": false,
+    "colors": [
+      "#e7c00c",
+      "#ff2828",
+      "#163969",
+      "#487eb6"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "CH10",
+    "name": "Chaqueta Mezclilla Animal Print",
+    "category": "Chaquetas",
+    "sizes": "S, M, L",
+    "unit": 799.0,
+    "wholesale": 36.0,
+    "efecto": false,
+    "colors": [
+      "#335c90",
+      "#c77b49"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "B001",
+    "name": "Blusa Jean con Cierre AKAPI",
+    "category": "Tops y Blusas",
+    "sizes": "8, 10, 12",
+    "unit": 770.0,
+    "wholesale": 30.0,
+    "efecto": false,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P158",
+    "name": "Basta Ancha Doble Costura",
+    "category": "Jeans y Pantalones",
+    "sizes": "10, 14, 16",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH25",
+    "name": "Conjunto para Dama AKAPI",
+    "category": "Chaquetas",
+    "sizes": "S a XXL",
+    "unit": 845.0,
+    "wholesale": 37.0,
+    "efecto": true,
+    "colors": [
+      "#000000",
+      "#ffffff",
+      "#e8ceb0"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P005",
+    "name": "Pantalón Skinny AKAPI Deep Blue",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P023",
+    "name": "AKAPI Skinny Clásico",
+    "category": "Jeans y Pantalones",
+    "sizes": "6 a 14",
+    "unit": 850.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P019",
+    "name": "Pantalón Skinny AKAPI Plus",
+    "category": "Jeans y Pantalones",
+    "sizes": "8, 14 (plus 18, 20)",
+    "unit": 850.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "CH03",
+    "name": "Chaqueta Animal Print AKAPI",
+    "category": "Chaquetas",
+    "sizes": "14, 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": false,
+    "colors": [
+      "#163969",
+      "#c77b49"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "P129",
+    "name": "Pantalón Basta Ancha Dark",
+    "category": "Jeans y Pantalones",
+    "sizes": "12, 16 (plus 18)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P174",
+    "name": "Basta Recta con Cinturón AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "V003",
+    "name": "Vestido Jean AKAPI Casual",
+    "category": "Vestidos y Enterizos",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "V006",
+    "name": "Vestido Jean AKAPI Fiesta",
+    "category": "Vestidos y Enterizos",
+    "sizes": "14, 16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P117",
+    "name": "Wide Leg AKAPI Elegance",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P109",
+    "name": "Basta Ancha Botones Frontales",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 14 (plus 18 a 24)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P111",
+    "name": "Wide Leg de Tela Suave",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16",
+    "unit": 845.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#000000",
+      "#ddc6a7"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "F050",
+    "name": "Falda Cargo AKAPI",
+    "category": "Shorts y Faldas",
+    "sizes": "14, 16",
+    "unit": 699.0,
+    "wholesale": 23.0,
+    "efecto": true,
+    "colors": [
+      "#ddc6a7",
+      "#91bb80"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "F041",
+    "name": "AKAPI Falda Cargo Safari",
+    "category": "Shorts y Faldas",
+    "sizes": "8, 16",
+    "unit": 650.0,
+    "wholesale": 20.0,
+    "efecto": false,
+    "colors": [
+      "#bb8f72"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "B008",
+    "name": "Body AKAPI Escote",
+    "category": "Tops y Blusas",
+    "sizes": "Estándar",
+    "unit": 549.0,
+    "wholesale": 16.0,
+    "efecto": false,
+    "colors": [
+      "#ddc6a7",
+      "#ffffff",
+      "#ebd6b8"
+    ],
+    "photosCount": 2
+  },
+  {
+    "code": "E003",
+    "name": "Enterizo Corto con Brillo",
+    "category": "Vestidos y Enterizos",
+    "sizes": "8 a 14",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P133",
+    "name": "Pantalón Basta Recta Classic",
+    "category": "Jeans y Pantalones",
+    "sizes": "14, 16 (plus 18, 20)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#000000"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P104",
+    "name": "Wide Leg AKAPI Confort Plus",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18 a 24)",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P103",
+    "name": "Mom Jeans AKAPI Confort",
+    "category": "Jeans y Pantalones",
+    "sizes": "16",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P068",
+    "name": "Mom Jeans AKAPI Retro",
+    "category": "Jeans y Pantalones",
+    "sizes": "14",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S012",
+    "name": "Short con Regulador de Cintura",
+    "category": "Shorts y Faldas",
+    "sizes": "8, 16",
+    "unit": 799.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P035",
+    "name": "Pantalón Basta Recta Botón",
+    "category": "Jeans y Pantalones",
+    "sizes": "8, 14, 16 (plus 18)",
+    "unit": 850.0,
+    "wholesale": 35.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P169",
+    "name": "Pantalón Basta Ancha Soft",
+    "category": "Jeans y Pantalones",
+    "sizes": "16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P110",
+    "name": "Wide Leg AKAPI Minimal",
+    "category": "Jeans y Pantalones",
+    "sizes": "8, 14, 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P070",
+    "name": "Pantalón Skinny Deshilachado",
+    "category": "Jeans y Pantalones",
+    "sizes": "8 a 16 (plus 18)",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P051",
+    "name": "Skinny AKAPI Básico",
+    "category": "Jeans y Pantalones",
+    "sizes": "8, 10, 12, 16",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#000000",
+      "#424651"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "S013B",
+    "name": "AKAPI Short White Denim",
+    "category": "Shorts y Faldas",
+    "sizes": "8 a 16",
+    "unit": 770.0,
+    "wholesale": 21.0,
+    "efecto": true,
+    "colors": [
+      "#ffffff"
+    ],
+    "img": "fotos/S013_2.jpg",
+    "photosCount": 2
+  },
+  {
+    "code": "P053",
+    "name": "Skinny de Botones AKAPI",
+    "category": "Jeans y Pantalones",
+    "sizes": "14, 16",
+    "unit": 800.0,
+    "wholesale": 34.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#000000",
+      "#335c90"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P116",
+    "name": "Basta Ancha AKAPI Style",
+    "category": "Jeans y Pantalones",
+    "sizes": "8, 14 (plus 20)",
+    "unit": 800.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#000000",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  },
+  {
+    "code": "P113",
+    "name": "Wide Leg AKAPI Flare",
+    "category": "Jeans y Pantalones",
+    "sizes": "10, 16",
+    "unit": 850.0,
+    "wholesale": 36.0,
+    "efecto": true,
+    "colors": [
+      "#335c90",
+      "#487eb6",
+      "#91b8e1"
+    ],
+    "photosCount": 3
+  }
+];
+
+    // Application state
+    let monedaActual = 'Q';
+    let mostrarMayorEnTienda = false;
+    let categoriaSeleccionada = 'Todos';
+    let carrito = [];
+
+    // Load state from localStorage or use defaults (con migración automática de imágenes para P195B y S013B)
+    function cargarProductos() {
+      const guardado = localStorage.getItem('akapi_productos_2026');
+      if (guardado) {
+        try {
+          const prodsGuardados = JSON.parse(guardado);
+          // Asegurar que si P195B o S013B no tenían foto o tenían la ruta antigua, se actualicen
+          prodsGuardados.forEach(p => {
+            const baseItem = CATALOGO_BASE.find(b => b.code === p.code);
+            if (baseItem && baseItem.img && !p.img) {
+              p.img = baseItem.img;
+            }
+          });
+          return prodsGuardados;
+        } catch (e) {
+          console.error("Error al cargar localStorage:", e);
+        }
+      }
+      return JSON.parse(JSON.stringify(CATALOGO_BASE));
+    }
+
+    let productos = cargarProductos();
+
+    function guardarProductos() {
+      localStorage.setItem('akapi_productos_2026', JSON.stringify(productos));
+    }
+
+    // Helper: Category Icon
+    function getIconoPorCategoria(cat) {
+      switch (cat) {
+        case 'Jeans y Pantalones': return 'fa-solid fa-person';
+        case 'Shorts y Faldas': return 'fa-solid fa-shirt';
+        case 'Chaquetas': return 'fa-solid fa-vest';
+        case 'Vestidos y Enterizos': return 'fa-solid fa-vest-patches';
+        case 'Tops y Blusas': return 'fa-solid fa-shirt';
+        case 'Calzado': return 'fa-solid fa-shoe-prints';
+        default: return 'fa-solid fa-tag';
+      }
+    }
+
+    // Manejador de respaldo inteligente para imágenes de Damas:
+    // Resuelve automáticamente P195B -> P195_2.jpg -> P195B.jpg -> P195.jpg
+    function manejarErrorImagenDamas(img) {
+      const code = img.dataset.code || "";
+      const paso = parseInt(img.dataset.paso || "0", 10);
+
+      if (paso === 0) {
+        img.dataset.paso = "1";
+        if (code === "P195B") {
+          img.src = "fotos/P195_2.jpg";
+          return;
+        } else if (code === "S013B") {
+          img.src = "fotos/S013_2.jpg";
+          return;
+        } else if (code.endsWith("B")) {
+          const base = code.slice(0, -1);
+          img.src = "fotos/" + base + "_2.jpg";
+          return;
+        } else {
+          img.src = "fotos/" + code + "_1.jpg";
+          return;
+        }
+      } else if (paso === 1) {
+        img.dataset.paso = "2";
+        if (code.endsWith("B")) {
+          const base = code.slice(0, -1);
+          img.src = "fotos/" + base + ".jpg";
+          return;
+        }
+      }
+
+      // Si no existe ninguna variante, ocultar imagen y mostrar icono de categoría
+      img.style.display = "none";
+      if (img.nextElementSibling) {
+        img.nextElementSibling.style.display = "block";
+      }
+    }
+
+    // ----------------------------------------------------
+    // VISTA 1: TIENDA ONLINE
+    // ----------------------------------------------------
+    function renderizarTienda() {
+      const contenedor = document.getElementById('grid-productos');
+      const busqueda = (document.getElementById('store-search').value || '').toLowerCase().trim();
+
+      const itemsFiltrados = productos.filter(p => {
+        const coincideCat = (categoriaSeleccionada === 'Todos') || (p.category === categoriaSeleccionada);
+        const coincideTxt = p.code.toLowerCase().includes(busqueda) || 
+                            p.name.toLowerCase().includes(busqueda) || 
+                            p.sizes.toLowerCase().includes(busqueda);
+        return coincideCat && coincideTxt;
+      });
+
+      document.getElementById('stat-total-models').innerText = productos.length;
+
+      if (itemsFiltrados.length === 0) {
+        contenedor.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #64748b;">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 2.5rem; margin-bottom: 12px; color: #cbd5e1;"></i>
+            <h3>No se encontraron productos</h3>
+            <p>Intenta con otro término de búsqueda o selecciona otra categoría.</p>
+          </div>
+        `;
+        return;
+      }
+
+      contenedor.innerHTML = itemsFiltrados.map(p => {
+        // Determinación de la ruta de imagen inicial óptima
+        let rutaFoto = p.img || ('fotos/' + p.code + '.jpg');
+        if (p.code === 'P195B' && !p.img) rutaFoto = 'fotos/P195_2.jpg';
+        if (p.code === 'S013B' && !p.img) rutaFoto = 'fotos/S013_2.jpg';
+
+        return `
+        <article class="product-card">
+          <div class="card-media">
+            <div class="card-badge-top">
+              <span class="tag-code">${p.code}</span>
+              ${p.efecto ? '<span class="tag-operada"><i class="fa-solid fa-sparkles"></i> Efecto Operada</span>' : ''}
+            </div>
+
+            <!-- Imagen del modelo con ajuste contain para que nunca se corte -->
+            <img src="${rutaFoto}" 
+                 data-code="${p.code}"
+                 alt="${p.name}" 
+                 class="card-img" 
+                 loading="lazy"
+                 onerror="manejarErrorImagenDamas(this)">
+
+            <i class="${getIconoPorCategoria(p.category)} card-illustration" style="display: none;"></i>
+
+            <div class="card-colors">
+              ${(p.colors || ['#335c90', '#487eb6']).map(c => `<span class="color-dot" style="background-color: ${c};"></span>`).join('')}
+            </div>
+          </div>
+
+          <div class="card-body">
+            <span class="card-category">${p.category}</span>
+            <h3 class="card-title">${p.name}</h3>
+
+            <div class="card-sizes">
+              <i class="fa-solid fa-ruler-horizontal"></i>
+              <span>Tallas: ${p.sizes}</span>
+            </div>
+
+            <div class="card-pricing">
+              <div class="price-unit-col">
+                <span class="price-label">Precio Unitario</span>
+                <span class="price-unit-val">${monedaActual}${p.unit.toFixed(2)}</span>
+              </div>
+              ${mostrarMayorEnTienda ? `
+                <div class="price-wholesale-col">
+                  <span class="price-label">Por Mayor</span>
+                  <span class="price-wholesale-val">${monedaActual}${p.wholesale.toFixed(2)}</span>
+                </div>
+              ` : ''}
+            </div>
+
+            <button class="card-btn" onclick="agregarAlCarrito('${p.code}')">
+              <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido
+            </button>
+          </div>
+        </article>
+      `;
+      }).join('');
+    }
+
+    function filtrarProductosTienda() {
+      renderizarTienda();
+    }
+
+    function filtrarCategoria(cat, btn) {
+      categoriaSeleccionada = cat;
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderizarTienda();
+    }
+
+    // ----------------------------------------------------
+    // VISTA 2: ADMINISTRADOR DE PRECIOS
+    // ----------------------------------------------------
+    function renderizarAdmin() {
+      const tbody = document.getElementById('tbody-admin-productos');
+      const busqueda = (document.getElementById('admin-search')?.value || '').toLowerCase().trim();
+
+      const filtrados = productos.filter(p => 
+        p.code.toLowerCase().includes(busqueda) || 
+        p.name.toLowerCase().includes(busqueda)
+      );
+
+      tbody.innerHTML = filtrados.map(p => {
+        const ganancia = p.unit - p.wholesale;
+        const gananciaPct = p.wholesale > 0 ? ((ganancia / p.wholesale) * 100).toFixed(0) : 0;
+        let rutaFoto = p.img || ('fotos/' + p.code + '.jpg');
+        if (p.code === 'P195B' && !p.img) rutaFoto = 'fotos/P195_2.jpg';
+        if (p.code === 'S013B' && !p.img) rutaFoto = 'fotos/S013_2.jpg';
+
+        return `
+          <tr>
+            <td>
+              <div class="admin-thumb">
+                <img src="${rutaFoto}" 
+                     data-code="${p.code}"
+                     alt="${p.code}" 
+                     onerror="manejarErrorImagenDamas(this)">
+                <i class="${getIconoPorCategoria(p.category)}" style="display: none; font-size: 1.2rem;"></i>
+              </div>
+            </td>
+            <td><strong style="color: var(--terracotta);">${p.code}</strong></td>
+            <td><strong>${p.name}</strong></td>
+            <td><span style="font-size:0.75rem; color:#64748b;">${p.category}</span></td>
+            <td>${p.sizes}</td>
+            <td>${p.efecto ? '<span style="color:var(--terracotta); font-weight:700;">Sí</span>' : 'No'}</td>
+            <td>
+              <div style="display:flex; align-items:center; gap:4px;">
+                <span>${monedaActual}</span>
+                <input type="number" step="0.5" class="price-input-cell" value="${p.unit.toFixed(2)}" 
+                  onchange="actualizarPrecio('${p.code}', 'unit', this.value)">
+              </div>
+            </td>
+            <td>
+              <div style="display:flex; align-items:center; gap:4px;">
+                <span>${monedaActual}</span>
+                <input type="number" step="0.5" class="price-input-cell" value="${p.wholesale.toFixed(2)}" 
+                  onchange="actualizarPrecio('${p.code}', 'wholesale', this.value)">
+              </div>
+            </td>
+            <td>
+              <span class="profit-pill">+${monedaActual}${ganancia.toFixed(2)} (${gananciaPct}%)</span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function actualizarPrecio(code, campo, valor) {
+      const num = parseFloat(valor);
+      if (isNaN(num) || num < 0) return;
+      const prod = productos.find(p => p.code === code);
+      if (prod) {
+        prod[campo] = num;
+        guardarProductos();
+        renderizarAdmin();
+        renderizarTienda();
+        renderizarPDF();
+      }
+    }
+
+    function filtrarTablaAdmin() {
+      renderizarAdmin();
+    }
+
+    function aplicarAjustePorcentual(campo) {
+      const inputId = campo === 'unit' ? 'batch-unit-pct' : 'batch-wholesale-pct';
+      const pct = parseFloat(document.getElementById(inputId).value);
+      if (isNaN(pct)) return;
+
+      if (!confirm(`¿Deseas aplicar un ${pct > 0 ? '+' : ''}${pct}% a todos los precios ${campo === 'unit' ? 'unitarios' : 'de mayoreo'}?`)) {
+        return;
+      }
+
+      productos.forEach(p => {
+        p[campo] = Math.round((p[campo] * (1 + (pct / 100))) * 100) / 100;
+      });
+
+      guardarProductos();
+      renderizarAdmin();
+      renderizarTienda();
+      renderizarPDF();
+      alert(`Precios ${campo === 'unit' ? 'unitarios' : 'de mayoreo'} actualizados con éxito.`);
+    }
+
+    function restablecerPreciosOriginales() {
+      if (confirm("¿Estás seguro de que deseas restablecer todos los precios a los valores iniciales del catálogo?")) {
+        productos = JSON.parse(JSON.stringify(CATALOGO_BASE));
+        guardarProductos();
+        renderizarAdmin();
+        renderizarTienda();
+        renderizarPDF();
+        alert("Precios restablecidos correctamente.");
+      }
+    }
+
+    function toggleVisibilidadPrecios() {
+      mostrarMayorEnTienda = document.getElementById('toggle-show-wholesale').checked;
+      renderizarTienda();
+    }
+
+    function cambiarMoneda(m) {
+      monedaActual = m;
+      renderizarAdmin();
+      renderizarTienda();
+      renderizarPDF();
+    }
+
+    // ----------------------------------------------------
+    // VISTA 3: GENERADOR Y EXPORTADOR PDF
+    // ----------------------------------------------------
+    function renderizarPDF() {
+      const contenedor = document.getElementById('pdf-grid-items');
+      const incluirMayor = document.getElementById('pdf-toggle-wholesale')?.checked ?? true;
+
+      contenedor.innerHTML = productos.map(p => {
+        let rutaFoto = p.img || ('fotos/' + p.code + '.jpg');
+        if (p.code === 'P195B' && !p.img) rutaFoto = 'fotos/P195_2.jpg';
+        if (p.code === 'S013B' && !p.img) rutaFoto = 'fotos/S013_2.jpg';
+
+        return `
+        <div class="print-item">
+          <div class="print-item-thumb">
+            <img src="${rutaFoto}" 
+                 data-code="${p.code}"
+                 alt="${p.name}" 
+                 onerror="manejarErrorImagenDamas(this)">
+            <i class="${getIconoPorCategoria(p.category)}" style="display: none;"></i>
+          </div>
+          <div class="print-item-code">${p.code} ${p.efecto ? '&bull; EFECTO OPERADA' : ''}</div>
+          <div class="print-item-name">${p.name}</div>
+          <div class="print-item-sizes">Tallas: ${p.sizes}</div>
+          <div class="print-item-prices">
+            <span>P. Unit: ${monedaActual}${p.unit.toFixed(2)}</span>
+            ${incluirMayor ? `<span style="color:var(--wholesale-color);">P. Mayor: ${monedaActual}${p.wholesale.toFixed(2)}</span>` : ''}
+          </div>
+        </div>
+      `;
+      }).join('');
+    }
+
+    function actualizarVistaPDF() {
+      renderizarPDF();
+    }
+
+    function imprimirODescargarPDF() {
+      window.print();
+    }
+
+    // ----------------------------------------------------
+    // GESTIÓN DE CARRITO Y PEDIDOS POR WHATSAPP
+    // ----------------------------------------------------
+    function toggleCarrito(abrir) {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      if (abrir) {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        renderizarCarrito();
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    function agregarAlCarrito(code) {
+      const prod = productos.find(p => p.code === code);
+      if (!prod) return;
+
+      let rutaFoto = prod.img || ('fotos/' + prod.code + '.jpg');
+      if (prod.code === 'P195B' && !prod.img) rutaFoto = 'fotos/P195_2.jpg';
+      if (prod.code === 'S013B' && !prod.img) rutaFoto = 'fotos/S013_2.jpg';
+
+      const itemExistente = carrito.find(item => item.code === code);
+      if (itemExistente) {
+        itemExistente.qty += 1;
+      } else {
+        carrito.push({
+          code: prod.code,
+          name: prod.name,
+          category: prod.category,
+          unit: prod.unit,
+          wholesale: prod.wholesale,
+          sizes: prod.sizes,
+          img: rutaFoto,
+          qty: 1
+        });
+      }
+
+      actualizarContadorCarrito();
+      toggleCarrito(true);
+    }
+
+    function modificarCantidad(code, delta) {
+      const item = carrito.find(i => i.code === code);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          carrito = carrito.filter(i => i.code !== code);
+        }
+      }
+      actualizarContadorCarrito();
+      renderizarCarrito();
+    }
+
+    function actualizarContadorCarrito() {
+      const totalPrendas = carrito.reduce((acc, i) => acc + i.qty, 0);
+      document.getElementById('cart-counter').innerText = totalPrendas;
+    }
+
+    function renderizarCarrito() {
+      const contenedor = document.getElementById('cart-items-container');
+      const tarifa = document.getElementById('cart-price-tier').value;
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = `
+          <div style="text-align: center; padding: 40px 10px; color: var(--text-muted);">
+            <i class="fa-solid fa-cart-shopping" style="font-size: 2.2rem; color: #cbd5e1; margin-bottom: 10px;"></i>
+            <p>Tu lista de pedido está vacía.</p>
+            <span style="font-size: 0.78rem;">Agrega modelos del catálogo para cotizar.</span>
+          </div>
+        `;
+        document.getElementById('cart-items-count').innerText = "0 prendas";
+        document.getElementById('cart-total-amount').innerText = `${monedaActual}0.00`;
+        return;
+      }
+
+      let subtotal = 0;
+      let totalPrendas = 0;
+
+      contenedor.innerHTML = carrito.map(item => {
+        const precioUnitario = tarifa === 'wholesale' ? item.wholesale : item.unit;
+        const totalItem = precioUnitario * item.qty;
+        subtotal += totalItem;
+        totalPrendas += item.qty;
+
+        return `
+          <div class="cart-item">
+            <div class="cart-item-thumb">
+              <img src="${item.img}" 
+                   data-code="${item.code}"
+                   alt="${item.name}" 
+                   onerror="manejarErrorImagenDamas(this)">
+              <i class="${getIconoPorCategoria(item.category)}" style="display: none;"></i>
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-title">${item.code} - ${item.name}</div>
+              <div class="cart-item-sub">${monedaActual}${precioUnitario.toFixed(2)} c/u &bull; Tallas: ${item.sizes}</div>
+              <div class="cart-qty-ctrl">
+                <button class="qty-btn" onclick="modificarCantidad('${item.code}', -1)">-</button>
+                <span style="font-size: 0.85rem; font-weight:700;">${item.qty}</span>
+                <button class="qty-btn" onclick="modificarCantidad('${item.code}', 1)">+</button>
+              </div>
+            </div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--navy-dark);">
+              ${monedaActual}${totalItem.toFixed(2)}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cart-items-count').innerText = `${totalPrendas} prendas`;
+      document.getElementById('cart-total-amount').innerText = `${monedaActual}${subtotal.toFixed(2)}`;
+    }
+
+    function enviarPedidoWhatsApp() {
+      if (carrito.length === 0) {
+        alert("Agrega al menos una prenda antes de enviar el pedido.");
+        return;
+      }
+
+      const tarifa = document.getElementById('cart-price-tier').value;
+      const tarifaTexto = tarifa === 'wholesale' ? 'PRECIO DE MAYOREO' : 'PRECIO UNITARIO';
+      
+      let mensaje = `*¡HOLA! DESEO REALIZAR UN PEDIDO DEL CATÁLOGO AKAPI 2026*\n`;
+      mensaje += `Modalidad: *${tarifaTexto}*\n\n`;
+      mensaje += `*DETALLE DE PRENDAS:*\n`;
+
+      let total = 0;
+      carrito.forEach((item, index) => {
+        const precio = tarifa === 'wholesale' ? item.wholesale : item.unit;
+        const sub = precio * item.qty;
+        total += sub;
+        mensaje += `${index + 1}. [${item.code}] ${item.name}\n`;
+        mensaje += `   - Cantidad: ${item.qty} | Tallas: ${item.sizes}\n`;
+        mensaje += `   - Subtotal: ${monedaActual}${sub.toFixed(2)}\n`;
+      });
+
+      mensaje += `\n*TOTAL ESTIMADO:* ${monedaActual}${total.toFixed(2)}\n\n`;
+      mensaje += `Por favor indícame la disponibilidad de colores y proceso de pago. ¡Gracias!`;
+
+      // Puedes personalizar el número telefónico aquí:
+      const telefonoWhatsApp = "50258000126"; 
+      const url = `https://api.whatsapp.com/send?phone=${telefonoWhatsApp}&text=${encodeURIComponent(mensaje.replace(/\\n/g, '\n'))}`;
+      window.open(url, '_blank');
+    }
+
+    // ----------------------------------------------------
+    // NAVEGACIÓN ENTRE VISTAS
+    // ----------------------------------------------------
+    function cambiarVista(vista) {
+      document.getElementById('view-tienda').style.display = vista === 'tienda' ? 'block' : 'none';
+      document.getElementById('view-admin').style.display = vista === 'admin' ? 'block' : 'none';
+      document.getElementById('view-pdf').style.display = vista === 'pdf' ? 'block' : 'none';
+
+      document.getElementById('tab-tienda').classList.toggle('active', vista === 'tienda');
+      document.getElementById('tab-admin').classList.toggle('active', vista === 'admin');
+      document.getElementById('tab-pdf').classList.toggle('active', vista === 'pdf');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize application on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderizarTienda();
+      renderizarAdmin();
+      renderizarPDF();
+      actualizarContadorCarrito();
+    });
+  </script>
+</body>
+</html>
